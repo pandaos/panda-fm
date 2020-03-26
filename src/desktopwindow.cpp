@@ -285,7 +285,7 @@ void DesktopWindow::updateShortcutsFromSettings(Settings& settings) {
 void DesktopWindow::createTrashShortcut(int items) {
     GKeyFile* kf = g_key_file_new();
     g_key_file_set_string(kf, "Desktop Entry", "Type", "Application");
-    g_key_file_set_string(kf, "Desktop Entry", "Exec", "pcmanfm-qt trash:///");
+    g_key_file_set_string(kf, "Desktop Entry", "Exec", "pandafm trash:///");
     // icon
     const char* icon_name = items > 0 ? "user-trash-full" : "user-trash";
     g_key_file_set_string(kf, "Desktop Entry", "Icon", icon_name);
@@ -313,7 +313,7 @@ void DesktopWindow::createTrashShortcut(int items) {
 void DesktopWindow::createHomeShortcut() {
     GKeyFile* kf = g_key_file_new();
     g_key_file_set_string(kf, "Desktop Entry", "Type", "Application");
-    g_key_file_set_string(kf, "Desktop Entry", "Exec", Fm::CStrPtr(g_strconcat("pcmanfm-qt ", Fm::FilePath::homeDir().toString().get(), nullptr)).get());
+    g_key_file_set_string(kf, "Desktop Entry", "Exec", Fm::CStrPtr(g_strconcat("pandafm ", Fm::FilePath::homeDir().toString().get(), nullptr)).get());
     g_key_file_set_string(kf, "Desktop Entry", "Icon", "user-home");
     g_key_file_set_string(kf, "Desktop Entry", "Name", g_get_user_name());
 
@@ -326,7 +326,7 @@ void DesktopWindow::createHomeShortcut() {
 void DesktopWindow::createComputerShortcut() {
     GKeyFile* kf = g_key_file_new();
     g_key_file_set_string(kf, "Desktop Entry", "Type", "Application");
-    g_key_file_set_string(kf, "Desktop Entry", "Exec", "pcmanfm-qt computer:///");
+    g_key_file_set_string(kf, "Desktop Entry", "Exec", "pandafm computer:///");
     g_key_file_set_string(kf, "Desktop Entry", "Icon", "computer");
     const QString name = tr("Computer");
     g_key_file_set_string(kf, "Desktop Entry", "Name", name.toStdString().c_str());
@@ -340,7 +340,7 @@ void DesktopWindow::createComputerShortcut() {
 void DesktopWindow::createNetworkShortcut() {
     GKeyFile* kf = g_key_file_new();
     g_key_file_set_string(kf, "Desktop Entry", "Type", "Application");
-    g_key_file_set_string(kf, "Desktop Entry", "Exec", "pcmanfm-qt network:///");
+    g_key_file_set_string(kf, "Desktop Entry", "Exec", "pandafm network:///");
     g_key_file_set_string(kf, "Desktop Entry", "Icon", "folder-network");
     const QString name = tr("Network");
     g_key_file_set_string(kf, "Desktop Entry", "Name", name.toStdString().c_str());
@@ -413,7 +413,7 @@ bool DesktopWindow::isTrashCan(std::shared_ptr<const Fm::FileInfo> file) const {
     if(file && (file->isDesktopEntry() || file->isShortcut()) && trashMonitor_) {
         const QString fileName = QString::fromStdString(file->name());
         const char* execStr = fileName == QLatin1String("trash-can.desktop")
-                                ? "pcmanfm-qt trash:///" : nullptr;
+                                ? "pandafm trash:///" : nullptr;
         if(execStr) {
             GKeyFile* kf = g_key_file_new();
             if(g_key_file_load_from_file(kf, file->path().toString().get(), G_KEY_FILE_NONE, nullptr)) {
@@ -550,7 +550,7 @@ QImage DesktopWindow::loadWallpaperFile(QSize requiredSize) {
             cacheFileName = QDir::homePath() + QLatin1String("/.cache");
         }
         Application* app = static_cast<Application*>(qApp);
-        cacheFileName += QLatin1String("/pcmanfm-qt/") + app->profileName();
+        cacheFileName += QLatin1String("/pandafm/") + app->profileName();
         QDir().mkpath(cacheFileName); // ensure that the cache dir exists
         cacheFileName += QLatin1String("/wallpaper.cache");
 
@@ -1218,11 +1218,11 @@ void DesktopWindow::trustOurDesktopShortcut(std::shared_ptr<const Fm::FileInfo> 
         return;
     }
     const QString fileName = QString::fromStdString(file->name());
-    auto homeExec = Fm::CStrPtr(g_strconcat("pcmanfm-qt ", Fm::FilePath::homeDir().toString().get(), nullptr));
-    const char* execStr = fileName == QLatin1String("trash-can.desktop") && ds.contains(QLatin1String("Trash")) ? "pcmanfm-qt trash:///" :
+    auto homeExec = Fm::CStrPtr(g_strconcat("pandafm ", Fm::FilePath::homeDir().toString().get(), nullptr));
+    const char* execStr = fileName == QLatin1String("trash-can.desktop") && ds.contains(QLatin1String("Trash")) ? "pandafm trash:///" :
                           fileName == QLatin1String("user-home.desktop") && ds.contains(QLatin1String("Home")) ? homeExec.get() :
-                          fileName == QLatin1String("computer.desktop") && ds.contains(QLatin1String("Computer")) ? "pcmanfm-qt computer:///" :
-                          fileName == QLatin1String("network.desktop") && ds.contains(QLatin1String("Network")) ? "pcmanfm-qt network:///" : nullptr;
+                          fileName == QLatin1String("computer.desktop") && ds.contains(QLatin1String("Computer")) ? "pandafm computer:///" :
+                          fileName == QLatin1String("network.desktop") && ds.contains(QLatin1String("Network")) ? "pandafm network:///" : nullptr;
     if(execStr) {
         GKeyFile* kf = g_key_file_new();
         if(g_key_file_load_from_file(kf, file->path().toString().get(), G_KEY_FILE_NONE, nullptr)) {

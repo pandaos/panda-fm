@@ -158,7 +158,7 @@ QString Settings::xdgUserConfigDir() {
 QString Settings::profileDir(QString profile, bool useFallback) {
     // try user-specific config file first
     QString dirName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)
-                      + QStringLiteral("/pcmanfm-qt/") + profile;
+                      + QStringLiteral("/pandafm/") + profile;
     QDir dir(dirName);
 
     // if user config dir does not exist, try system-wide config dirs instead
@@ -166,7 +166,7 @@ QString Settings::profileDir(QString profile, bool useFallback) {
         QString fallbackDir;
         const QStringList confList = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation);
         for(const auto &thisConf : confList) {
-            fallbackDir = thisConf + QStringLiteral("/pcmanfm-qt/") + profile;
+            fallbackDir = thisConf + QStringLiteral("/pandafm/") + profile;
             if(fallbackDir == dirName) {
                 continue;
             }
