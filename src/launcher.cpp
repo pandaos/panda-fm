@@ -66,6 +66,7 @@ bool Launcher::openFolder(GAppLaunchContext* /*ctx*/, const Fm::FileInfoList& fo
         mainWindow->addTab(std::move(path));
     }
     mainWindow->show();
+    mainWindow->activateWindow();
     mainWindow->raise();
     openInNewTab_ = false;
     return true;
