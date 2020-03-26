@@ -19,7 +19,7 @@ set(pandafm_SRCS
 )
 
 qt5_add_dbus_adaptor(pandafm_DBUS_SRCS
-    org.pcmanfm.Application.xml
+    org.pandafm.Application.xml
     application.h
     PCManFM::Application
     applicationadaptor

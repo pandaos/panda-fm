@@ -1,6 +1,6 @@
 # Hashes of file build rules.
 832378d8c555c0a887e705424b928e50 src/CMakeFiles/pandafm_autogen
-3c478906d2c69d99feca9cb1a26e23bb src/applicationadaptor.cpp
+522c3ecd6dbd3283e699b12bb883ff53 src/applicationadaptor.cpp
 a7836d69e1b88fd3e65de6c4ae605edf src/applicationadaptor.moc
 7f52af5aff6cfca4d5dd10e64425d2ad src/pcmanfm-qt-desktop-pref.desktop
 96e3743aef010e044bf6a9cafc46e03e src/pcmanfm-qt.desktop

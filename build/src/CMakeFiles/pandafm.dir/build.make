@@ -61,9 +61,9 @@ src/applicationadaptor.moc: src/applicationadaptor.h
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/panda/Projects/panda-fm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating applicationadaptor.moc"
 	cd /home/panda/Projects/panda-fm/build/src && /usr/lib/qt5/bin/moc @/home/panda/Projects/panda-fm/build/src/applicationadaptor.moc_parameters
 
-src/applicationadaptor.cpp: ../src/org.pcmanfm.Application.xml
+src/applicationadaptor.cpp: ../src/org.pandafm.Application.xml
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/panda/Projects/panda-fm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating applicationadaptor.cpp, applicationadaptor.h"
-	cd /home/panda/Projects/panda-fm/build/src && /usr/lib/qt5/bin/qdbusxml2cpp -m -a applicationadaptor -c ApplicationAdaptor -i application.h -l PCManFM::Application /home/panda/Projects/panda-fm/src/org.pcmanfm.Application.xml
+	cd /home/panda/Projects/panda-fm/build/src && /usr/lib/qt5/bin/qdbusxml2cpp -m -a applicationadaptor -c ApplicationAdaptor -i application.h -l PCManFM::Application /home/panda/Projects/panda-fm/src/org.pandafm.Application.xml
 
 src/applicationadaptor.h: src/applicationadaptor.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/applicationadaptor.h

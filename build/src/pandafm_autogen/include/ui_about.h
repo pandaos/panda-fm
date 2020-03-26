@@ -133,8 +133,9 @@ public:
         label->setText(QApplication::translate("AboutDialog", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">PandaOS File Manager</span></p></body></html>", nullptr));
         version->setText(QString());
         label_2->setText(QApplication::translate("AboutDialog", "Lightweight file manager", nullptr));
-        label_3->setText(QApplication::translate("AboutDialog", "<html><head/><body><p><a href=\"https://github.com/pandaos/\"><span style=\" text-decoration: underline; color:#0000ff;\">https://lxqt.org/</span></a></p></body></html>", nullptr));
+        label_3->setText(QApplication::translate("AboutDialog", "<html><head/><body><p><a href=\"https://github.com/pandaos/\"><span style=\" text-decoration: underline; color:#0000ff;\">https://github.com/pandaos/</span></a></p></body></html>", nullptr));
         plainTextEdit_2->setPlainText(QApplication::translate("AboutDialog", "Programming:\n"
+"* Rekols < rekols@foxmail.com>\n"
 "* Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
 "", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("AboutDialog", "Authors", nullptr));

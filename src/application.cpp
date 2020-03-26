@@ -58,8 +58,8 @@
 
 namespace PCManFM {
 
-static const char* serviceName = "org.pcmanfm.PCManFM";
-static const char* ifaceName = "org.pcmanfm.Application";
+static const char* serviceName = "org.pandafm.PCManFM";
+static const char* ifaceName = "org.pandafm.Application";
 
 int ProxyStyle::styleHint(StyleHint hint, const QStyleOption* option, const QWidget* widget, QStyleHintReturn* returnData) const {
     Application* app = static_cast<Application*>(qApp);
