@@ -107,7 +107,7 @@ protected Q_SLOTS:
     void onPathBarChdir(const Fm::FilePath& dirPath);
     void onPathBarMiddleClickChdir(const Fm::FilePath &dirPath);
 
-    void on_actionNewTab_triggered();
+    // void on_actionNewTab_triggered();
     void on_actionNewWin_triggered();
     void on_actionNewFolder_triggered();
     void on_actionNewBlankFile_triggered();
@@ -128,7 +128,7 @@ protected Q_SLOTS:
 
     void on_actionGoBack_triggered();
     void on_actionGoForward_triggered();
-    void on_actionGoUp_triggered();
+    // void on_actionGoUp_triggered();
     void on_actionHome_triggered();
     void on_actionReload_triggered();
     void on_actionConnectToServer_triggered();

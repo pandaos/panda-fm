@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>369</height>
+    <width>920</width>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,8 +58,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>460</width>
-     <height>30</height>
+     <width>920</width>
+     <height>22</height>
     </rect>
    </property>
    <property name="contextMenuPolicy">
@@ -76,7 +76,6 @@
      <addaction name="actionNewFolder"/>
      <addaction name="actionNewBlankFile"/>
     </widget>
-    <addaction name="actionNewTab"/>
     <addaction name="actionNewWin"/>
     <addaction name="separator"/>
     <addaction name="menuCreateNew"/>
@@ -201,7 +200,6 @@
     <addaction name="separator"/>
     <addaction name="actionGoBack"/>
     <addaction name="actionGoForward"/>
-    <addaction name="actionGoUp"/>
     <addaction name="separator"/>
     <addaction name="actionConnectToServer"/>
    </widget>
@@ -242,35 +240,18 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionNewTab"/>
    <addaction name="actionGoBack"/>
    <addaction name="actionGoForward"/>
-   <addaction name="actionGoUp"/>
    <addaction name="actionReload"/>
    <addaction name="separator"/>
-   <addaction name="actionIconView"/>
-   <addaction name="actionThumbnailView"/>
-   <addaction name="actionCompactView"/>
-   <addaction name="actionDetailedList"/>
    <addaction name="separator"/>
    <addaction name="actionGo"/>
    <addaction name="actionMenu"/>
+   <addaction name="actionThumbnailView"/>
+   <addaction name="actionIconView"/>
+   <addaction name="actionCompactView"/>
+   <addaction name="actionDetailedList"/>
   </widget>
-  <action name="actionGoUp">
-   <property name="icon">
-    <iconset theme="go-up">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>Go &amp;Up</string>
-   </property>
-   <property name="toolTip">
-    <string>Go Up</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+Up</string>
-   </property>
-  </action>
   <action name="actionHome">
    <property name="icon">
     <iconset theme="user-home">
@@ -566,21 +547,6 @@
    </property>
    <property name="text">
     <string>&amp;Preserve sorting for this folder</string>
-   </property>
-  </action>
-  <action name="actionNewTab">
-   <property name="icon">
-    <iconset theme="window-new">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>New &amp;Tab</string>
-   </property>
-   <property name="toolTip">
-    <string>New Tab</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+T</string>
    </property>
   </action>
   <action name="actionGoBack">

@@ -321,7 +321,7 @@ MainWindow::MainWindow(Fm::FilePath path):
             currentPage()->backspacePressed();
             return;
         }
-        on_actionGoUp_triggered();
+        // on_actionGoUp_triggered();
     });
 
     shortcut = new QShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete), this);
@@ -741,14 +741,14 @@ void MainWindow::onPathBarMiddleClickChdir(const Fm::FilePath& dirPath) {
     }
 }
 
-void MainWindow::on_actionGoUp_triggered() {
-    QTimer::singleShot(0, this, [this] {
-        if(TabPage* page = currentPage()) {
-            page->up();
-            updateUIForCurrentPage();
-        }
-    });
-}
+// void MainWindow::on_actionGoUp_triggered() {
+//     QTimer::singleShot(0, this, [this] {
+//         if(TabPage* page = currentPage()) {
+//             page->up();
+//             updateUIForCurrentPage();
+//         }
+//     });
+// }
 
 void MainWindow::on_actionGoBack_triggered() {
     QTimer::singleShot(0, this, [this] {
@@ -789,11 +789,11 @@ void MainWindow::on_actionGo_triggered() {
     onPathEntryReturnPressed();
 }
 
-void MainWindow::on_actionNewTab_triggered() {
-    auto path = currentPage()->path();
-    int index = addTab(path);
-    activeViewFrame_->getTabBar()->setCurrentIndex(index);
-}
+// void MainWindow::on_actionNewTab_triggered() {
+//     auto path = currentPage()->path();
+//     int index = addTab(path);
+//     activeViewFrame_->getTabBar()->setCurrentIndex(index);
+// }
 
 void MainWindow::on_actionNewWin_triggered() {
     auto path = currentPage()->path();
@@ -1356,7 +1356,7 @@ void MainWindow::updateUIForCurrentPage(bool setFocus) {
         ui.sidePane->setShowHidden(tabPage->showHidden());
 
         // update back/forward/up toolbar buttons
-        ui.actionGoUp->setEnabled(tabPage->canUp());
+        // ui.actionGoUp->setEnabled(tabPage->canUp());
         ui.actionGoBack->setEnabled(tabPage->canBackward());
         ui.actionGoForward->setEnabled(tabPage->canForward());
 
