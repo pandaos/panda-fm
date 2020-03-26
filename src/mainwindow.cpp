@@ -1822,7 +1822,7 @@ void MainWindow::focusPathEntry() {
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent* event) {
-    if(event->mimeData()->hasFormat(QStringLiteral("application/pcmanfm-qt-tab"))
+    if(event->mimeData()->hasFormat(QStringLiteral("application/pandafm-qt-tab"))
        // ensure that the tab drag source is ours (and not a root window, for example)
        && lastActive_ && lastActive_->isActiveWindow()) {
         event->acceptProposedAction();
@@ -1830,7 +1830,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent* event) {
 }
 
 void MainWindow::dropEvent(QDropEvent* event) {
-    if(event->mimeData()->hasFormat(QStringLiteral("application/pcmanfm-qt-tab"))) {
+    if(event->mimeData()->hasFormat(QStringLiteral("application/pandafm-qt-tab"))) {
         dropTab();
     }
     event->acceptProposedAction();
