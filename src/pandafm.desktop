@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=PandaOS File Manager
+GenericName=File Manager
+Comment=Browse the file system and manage the files
+Exec=pandafm %U
+MimeType=inode/directory;
+Icon=system-file-manager
+Categories=FileManager;Utility;Core;Qt;
+StartupNotify=true
