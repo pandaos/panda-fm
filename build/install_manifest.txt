@@ -1,1 +1,2 @@
 /usr/bin/pandafm
+/usr/share/applications/pandafm.desktop

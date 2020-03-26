@@ -78,10 +78,7 @@ target_link_libraries(pandafm
 )
 
 install(TARGETS pandafm RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-
-# install a desktop entry file for pandafm and desktop preferences
-install(FILES ${DESKTOP_FILES} DESTINATION "${CMAKE_INSTALL_DATADIR}/applications"
-)
+install(FILES pandafm.desktop DESTINATION /usr/share/applications)
 
 # prevent the generated files from being deleted during make clean
 set_directory_properties(PROPERTIES CLEAN_NO_CUSTOM true)
