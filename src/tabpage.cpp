@@ -213,7 +213,7 @@ void TabPage::showFilterBar() {
 bool TabPage::eventFilter(QObject* watched, QEvent* event) {
     // when a text is typed inside the view, type it inside the filter-bar
     if(filterBar_ && watched == folderView_->childView() &&  event->type() == QEvent::KeyPress) {
-        if(QKeyEvent* ke = static_cast<QKeyEvent*>(event)) {
+        if (QKeyEvent* ke = static_cast<QKeyEvent*>(event)) {
             filterBar_->keyPressed(ke);
         }
     }

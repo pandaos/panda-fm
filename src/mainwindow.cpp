@@ -321,7 +321,8 @@ MainWindow::MainWindow(Fm::FilePath path):
             currentPage()->backspacePressed();
             return;
         }
-        // on_actionGoUp_triggered();
+
+        on_actionGoUp_triggered();
     });
 
     shortcut = new QShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete), this);
@@ -741,14 +742,14 @@ void MainWindow::onPathBarMiddleClickChdir(const Fm::FilePath& dirPath) {
     }
 }
 
-// void MainWindow::on_actionGoUp_triggered() {
-//     QTimer::singleShot(0, this, [this] {
-//         if(TabPage* page = currentPage()) {
-//             page->up();
-//             updateUIForCurrentPage();
-//         }
-//     });
-// }
+void MainWindow::on_actionGoUp_triggered() {
+    QTimer::singleShot(0, this, [this] {
+        if(TabPage* page = currentPage()) {
+            page->up();
+            updateUIForCurrentPage();
+        }
+    });
+}
 
 void MainWindow::on_actionGoBack_triggered() {
     QTimer::singleShot(0, this, [this] {

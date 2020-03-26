@@ -128,7 +128,7 @@ protected Q_SLOTS:
 
     void on_actionGoBack_triggered();
     void on_actionGoForward_triggered();
-    // void on_actionGoUp_triggered();
+    void on_actionGoUp_triggered();
     void on_actionHome_triggered();
     void on_actionReload_triggered();
     void on_actionConnectToServer_triggered();
